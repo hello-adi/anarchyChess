@@ -2,7 +2,14 @@
 # drawing certain pieces and so on.
 
 import pygame
-from .constants import BLACK, RED, ROWS, SQUARE_SIZE  # dot constant for relative import
+from .constants import (
+    BLACK,
+    CREAM,
+    GREEN,
+    RED,
+    ROWS,
+    SQUARE_SIZE,
+)  # dot constant for relative import
 
 
 class Board:
@@ -15,11 +22,14 @@ class Board:
         self.red_kings = self.white_kings = 0
 
     def draw_square(self, win):
-        win.fill(BLACK)
+        win.fill(GREEN)
         for row in range(ROWS):
             for col in range(row % 2, ROWS, 2):
                 pygame.draw.rect(
                     win,
-                    RED,
+                    CREAM,
                     (row * SQUARE_SIZE, col * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE),
                 )
+
+    def create_board(self):
+        pass

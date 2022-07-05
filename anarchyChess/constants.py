@@ -9,7 +9,9 @@ ROWS, COLS = 8, 8
 SQUARE_SIZE = WIDTH // COLS
 
 # Colors (rgb)
-RED = (255, 0, 0)
+GREEN = (119, 149, 86)
+CREAM = (235, 236, 208)
 WHITE = (255, 255, 255)
+RED = (255, 0, 0)
 BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
