@@ -1,4 +1,5 @@
 import pygame
+import os
 from anarchyChess.constants import WIDTH, HEIGHT
 from anarchyChess.board import Board
 
