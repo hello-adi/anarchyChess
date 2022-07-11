@@ -3,6 +3,8 @@ import os
 from anarchyChess.constants import WIDTH, HEIGHT
 from anarchyChess.board import Board
 
+board = pygame.image.load(os.path.join("images", "black_bishop.png"))
+
 FPS = 60
 WIN = pygame.display.set_mode(
     (WIDTH, HEIGHT)
