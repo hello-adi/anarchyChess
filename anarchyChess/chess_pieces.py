@@ -36,6 +36,9 @@ for img in w:
 class Piece:
 
     img_index = -1
+    rect = (0, 0, 592, 592)
+    startX = rect[0]
+    startY = rect[1]
 
     def __init__(self, row, col, color) -> None:
         self.row = 0
@@ -52,12 +55,17 @@ class Piece:
     def isSelected(self):
         return self.selected
 
-    def draw(self):
+    def draw(self, WIN):
         # img_index = -1
         if self.color == "w":
             draw_image = W[self.img_index]
         else:
             draw_image = B[self.img_index]
+
+        x = self.startX + (self.col * self.rect[2] / 8)
+        y = self.startY + (self.row * self.rect[2] / 8)
+
+        WIN.blit(draw_image, (x, y))
 
 
 class Bishop(Piece):
