@@ -1,8 +1,9 @@
 from platform import win32_edition
 import pygame
 import os
-from anarchyChess.constants import WIDTH, HEIGHT
+from anarchyChess.constants import RED, WIDTH, HEIGHT
 
+rect = (0, 0, 592, 592)
 # from anarchyChess.board import Board
 
 board = pygame.image.load(os.path.join("images", "board400x400.png"))
@@ -17,6 +18,7 @@ pygame.display.set_caption("anarchyChess")
 def redraw_pygame_window():
     global WIN
     WIN.blit(board, (0, 0))
+    # pygame.draw.rect(WIN, RED, (0, 0, 592, 592), 3)
     pygame.display.update()
 
 

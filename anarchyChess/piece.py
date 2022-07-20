@@ -1,6 +1,7 @@
 import pygame
 import os
-from .constants import RED, SQUARE_SIZE
+
+# from .constants import RED, SQUARE_SIZE
 
 # load images using pygame.image.load(os.path.join("images", "image-name.png"))
 b_bishop = pygame.image.load(os.path.join("images", "black_bishop.png"))
@@ -33,6 +34,9 @@ for img in w:
 
 
 class Piece:
+
+    img_index = -1
+
     def __init__(self, row, col, color) -> None:
         self.row = 0
         self.col = 0
@@ -49,7 +53,7 @@ class Piece:
         return self.selected
 
     def draw(self):
-        img_index = -1
+        # img_index = -1
         if self.color == "w":
             draw_image = W[self.img_index]
         else:

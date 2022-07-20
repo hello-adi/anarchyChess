@@ -4,7 +4,7 @@ import pygame
 # number of rows and columns in the chessboard
 # size of each square in the chess board
 
-WIDTH, HEIGHT = 590, 590
+WIDTH, HEIGHT = 592, 592
 ROWS, COLS = 8, 8
 SQUARE_SIZE = WIDTH // COLS
 
