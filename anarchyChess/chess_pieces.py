@@ -62,8 +62,8 @@ class Piece:
         else:
             draw_image = b[self.img_index]
 
-        x = round(self.startX + (self.col * self.rect[2] / 8))
-        y = round(self.startY + (self.row * self.rect[2] / 8))
+        x = 5 + round(self.startX + (self.col * self.rect[2] / 8))
+        y = 7 + round(self.startY + (self.row * self.rect[2] / 8))
 
         WIN.blit(draw_image, (x, y))
 
