@@ -1,6 +1,7 @@
 from platform import win32_edition
 import pygame
 import os
+from anarchyChess.board import Board
 from anarchyChess.chess_pieces import Bishop
 from anarchyChess.constants import RED, WIDTH, HEIGHT
 
@@ -19,8 +20,8 @@ pygame.display.set_caption("anarchyChess")
 def redraw_pygame_window():
     global WIN
     WIN.blit(board, (0, 0))
-    b = Bishop(1, 1, "w")
-    b.draw(WIN)
+    chess_board = Board(8, 8)
+    chess_board.draw(WIN)
     # pygame.draw.rect(WIN, RED, (0, 0, 592, 592), 3)
     pygame.display.update()
 

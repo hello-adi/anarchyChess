@@ -20,17 +20,17 @@ w_queen = pygame.image.load(os.path.join("images", "white_queen.png"))
 
 
 # scaling images
-b = [b_bishop, b_king, b_knight, b_pawn, b_rook, b_queen]
-w = [w_bishop, w_king, w_knight, w_pawn, w_rook, w_queen]
+b = [b_bishop, b_king, b_knight, b_pawn, b_queen, b_rook]
+w = [w_bishop, w_king, w_knight, w_pawn, w_queen, w_rook]
 
 B = []
 W = []
 
 for img in b:
-    B.append(pygame.transform.scale2x(img))
+    B.append(pygame.transform.scale(img, (74, 74)))
 
 for img in w:
-    W.append(pygame.transform.scale2x(img))
+    W.append(pygame.transform.scale(img, (74, 74)))
 
 
 class Piece:
@@ -41,8 +41,8 @@ class Piece:
     startY = rect[1]
 
     def __init__(self, row, col, color) -> None:
-        self.row = 0
-        self.col = 0
+        self.row = row
+        self.col = col
         self.color = color
         self.selected = False
 
@@ -58,12 +58,12 @@ class Piece:
     def draw(self, WIN):
         # img_index = -1
         if self.color == "w":
-            draw_image = W[self.img_index]
+            draw_image = w[self.img_index]
         else:
-            draw_image = B[self.img_index]
+            draw_image = b[self.img_index]
 
-        x = self.startX + (self.col * self.rect[2] / 8)
-        y = self.startY + (self.row * self.rect[2] / 8)
+        x = round(self.startX + (self.col * self.rect[2] / 8))
+        y = round(self.startY + (self.row * self.rect[2] / 8))
 
         WIN.blit(draw_image, (x, y))
 
